@@ -53,3 +53,27 @@ table.appendChild(tableBody);
 // Append the table to the document body
 document.body.appendChild(table);
 
+// Define the Teacher interface
+interface Teacher {
+  readonly firstName: string;    // Can only be set during initialization
+  readonly lastName: string;     // Can only be set during initialization
+  fullTimeEmployee: boolean;     // Required
+  yearsOfExperience?: number;    // Optional
+  location: string;              // Required
+
+  // Add index signature to allow any other properties of any type
+  [key: string]: any;
+}
+
+// Create a Teacher object
+const teacher3: Teacher = {
+  firstName: 'John',
+  lastName: 'Doe',
+  fullTimeEmployee: false,
+  location: 'London',
+  contract: false,  // Additional property not explicitly defined in the interface
+};
+
+// Log the teacher object
+console.log(teacher3);
+
